@@ -65,7 +65,8 @@ impl From<String> for HttpRequest {
             } else if line.contains(":") {
                 let (key, value) = process_header_line(line);
                 parsed_headers.insert(key, value);
-            } else if line.len() == 0 {} else {
+            } else if line.len() == 0 {
+            } else {
                 paresd_msg_body = line;
             }
         }
